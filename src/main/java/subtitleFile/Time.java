@@ -63,7 +63,7 @@ public class Time {
 	 * @param string supported formats: "hh:mm:ss,ms", "h:mm:ss.cs" and "hhmmssff/fps"
 	 * @return formatted time in a string
 	 */
-	protected String getTime(String format) {
+	public String getTime(String format) {
 		//we use string builder for efficiency
 		StringBuilder time = new StringBuilder();
 		String aux;
