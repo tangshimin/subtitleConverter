@@ -60,7 +60,7 @@ public class Time {
 	/**
 	 * Method to return a formatted value of the time stored
 	 * 
-	 * @param string supported formats: "hh:mm:ss,ms", "h:mm:ss.cs" and "hhmmssff/fps"
+	 * @param format supported formats: "hh:mm:ss,ms", "h:mm:ss.cs" and "hhmmssff/fps"
 	 * @return formatted time in a string
 	 */
 	public String getTime(String format) {
