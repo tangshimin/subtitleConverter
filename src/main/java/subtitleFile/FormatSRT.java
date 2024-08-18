@@ -46,7 +46,6 @@ public class FormatSRT implements TimedTextFileFormat {
 
 		TimedTextObject tto = new TimedTextObject();
 		Caption caption = new Caption();
-		int captionNumber = 1;
 		boolean allGood;
 
 		//first lets load the file
@@ -65,21 +64,7 @@ public class FormatSRT implements TimedTextFileFormat {
 				lineCounter++;
 				//if its a blank line, ignore it, otherwise...
 				if (!line.isEmpty()){
-					allGood = false;
-					//the first thing should be an increasing number
-					try {
-						int num = Integer.parseInt(line);
-						if (num != captionNumber)
-							throw new Exception();
-						else {
-							captionNumber++;
-							allGood = true;
-						}
-					} catch (Exception e) {
-						tto.warnings+= captionNumber + " expected at line " + lineCounter;
-						tto.warnings+= "\n skipping to next line\n\n";
-					}
-					if (allGood){
+					allGood = true;
 						//we go to next line, here the begin and end time should be found
 						try {
 							lineCounter++;
@@ -94,7 +79,6 @@ public class FormatSRT implements TimedTextFileFormat {
 							tto.warnings += "incorrect time format at line "+lineCounter;
 							allGood = false;
 						}
-					}
 					if (allGood){
 						//we go to next line where the caption text starts
 						lineCounter++;
