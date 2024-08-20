@@ -98,20 +98,28 @@ public class Style {
 				color = "00ffffff ";
 		} else if (format.equalsIgnoreCase("&HBBGGRR")){
 			//hex format from SSA
-			StringBuilder sb = new StringBuilder();
-			sb.append(value.substring(6));
-			sb.append(value.substring(4,5));
-			sb.append(value.substring(2,3));
-			sb.append("ff");
-			color = sb.toString();
+			if (value.equalsIgnoreCase("&H0")) {
+				color = "00000000"; // Handle &H0 case
+			} else {
+				StringBuilder sb = new StringBuilder();
+				sb.append(value.substring(6));
+				sb.append(value.substring(4, 5));
+				sb.append(value.substring(2, 3));
+				sb.append("ff");
+				color = sb.toString();
+			}
 		} else if (format.equalsIgnoreCase("&HAABBGGRR")){
 			//hex format from ASS
-			StringBuilder sb = new StringBuilder();
-			sb.append(value.substring(8));
-			sb.append(value.substring(6,7));
-			sb.append(value.substring(4,5));
-			sb.append(value.substring(2,3));
-			color = sb.toString();
+			if (value.equalsIgnoreCase("&H0")) {
+				color = "00000000"; // Handle &H0 case
+			} else {
+				StringBuilder sb = new StringBuilder();
+				sb.append(value.substring(8));
+				sb.append(value.substring(6, 7));
+				sb.append(value.substring(4, 5));
+				sb.append(value.substring(2, 3));
+				color = sb.toString();
+			}
 		} else if (format.equalsIgnoreCase("decimalCodedBBGGRR")){
 			//normal format from SSA
 			color = Integer.toHexString(Integer.parseInt(value));
