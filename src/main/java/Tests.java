@@ -83,32 +83,32 @@ public class Tests {
 				File file = new File("../standards/SRT/Avengers.2012.Eng.Subs.srt");
 				InputStream is = new FileInputStream(file);
 				tto = ttff.parseFile(file.getName(), is);
-				IOClass.writeFileTxt("test.srt", tto.toSRT());
+				IOClass.writeFileTxt("500Days of Summer 2009 1080p.en-test.srt", tto.toSRT());
 
 				//To test the correct implementation of the ASS/SSA parser and writer.
 				ttff = new FormatASS();
-				file = new File("../standards/ASS/test.ssa");
+				file = new File("Subtitle Files/standards/ASS/test.ssa");
 				is = new FileInputStream(file);
 				tto = ttff.parseFile(file.getName(), is);
 				IOClass.writeFileTxt("test.ssa", tto.toASS());
 
 				//To test the correct implementation of the TTML parser and writer.
 				ttff = new FormatTTML();
-				file = new File("../standards/XML/Debate0_03-03-08.dfxp.xml");
+				file = new File("Subtitle Files/standards/XML/Debate0_03-03-08.dfxp.xml");
 				is = new FileInputStream(file);
 				tto = ttff.parseFile(file.getName(), is);
 				IOClass.writeFileTxt("test.xml", tto.toTTML());
 
 				//To test the correct implementation of the SCC parser and writer.
 				ttff = new FormatSCC();
-				file = new File("../standards/SCC/sccTest.scc");
+				file = new File("Subtitle Files/standards/SCC/sccTest.scc");
 				is = new FileInputStream(file);
 				tto = ttff.parseFile(file.getName(), is);
 				IOClass.writeFileTxt("prueba.scc", tto.toSCC());
 
 				//To test the correct implementation of the STL parser and writer.
 				ttff = new FormatSTL();
-				file = new File("../standards/STL/Alsalirdeclasebien.stl");
+				file = new File("Subtitle Files/standards/STL/Alsalirdeclasebien.stl");
 				is = new FileInputStream(file);
 				tto = ttff.parseFile(file.getName(), is);
 				try {
